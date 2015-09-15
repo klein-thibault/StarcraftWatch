@@ -21,7 +21,7 @@
             </objects>
             <point key="canvasLocation" x="-1832" y="418"/>
         </scene>
-        <!--Videos View Controller-->
+        <!--Starcraft 2 videos-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="VideosViewController" customModule="StarcraftWatch" customModuleProvider="target" sceneMemberID="viewController">
@@ -120,7 +120,7 @@
                             <constraint firstAttribute="trailing" secondItem="Rde-Gm-btL" secondAttribute="trailing" id="zaH-hx-X87"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Pdo-BU-lQ4"/>
+                    <navigationItem key="navigationItem" title="Starcraft 2 videos" id="Pdo-BU-lQ4"/>
                     <connections>
                         <outlet property="videosCollectionView" destination="4tS-tv-Oh4" id="Dp9-7K-ohX"/>
                     </connections>
@@ -141,31 +141,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nCx-CT-KrP">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="nCx-CT-KrP">
                                 <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DVe-Gk-rRx" userLabel="Video View">
-                                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1920" height="979.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sYE-yz-wLF">
-                                        <rect key="frame" x="0.0" y="1080" width="1920" height="0.0"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="sYE-yz-wLF">
+                                        <rect key="frame" x="0.0" y="1029.5" width="1920" height="50.5"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YI0-m5-yAy" userLabel="Channel Image View">
-                                                <rect key="frame" x="0.0" y="0.0" width="1878" height="0.0"/>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fb-wk-FMc" userLabel="Title Label">
-                                                <rect key="frame" x="1878" y="0.0" width="42" height="0.0"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fb-wk-FMc" userLabel="Title Label">
+                                                <rect key="frame" x="15" y="15" width="1890" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
+                                        <edgeInsets key="layoutMargins" top="15" left="15" bottom="15" right="15"/>
                                     </stackView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="sYE-yz-wLF" firstAttribute="bottom" secondItem="DVe-Gk-rRx" secondAttribute="bottom" id="yQo-dh-NN9"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <constraints>
