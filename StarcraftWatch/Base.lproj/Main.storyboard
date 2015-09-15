@@ -1,25 +1,187 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="6185.10" systemVersion="14A360a" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="NO" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="9046" systemVersion="14F27" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" initialViewController="MAM-so-yOP">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6181.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9035"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="9QI-r7-IgM">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="MAM-so-yOP" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wCd-f4-5T5">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="145"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="yV0-lq-4e0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U98-LL-Mli" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1832" y="418"/>
+        </scene>
+        <!--Videos View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="VideosViewController" customModule="StarcraftWatch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Rde-Gm-btL">
+                                <rect key="frame" x="0.0" y="195" width="1920" height="835"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="bQa-sm-mPZ">
+                                        <rect key="frame" x="569" y="0.0" width="782" height="270"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starcraft2" translatesAutoresizingMaskIntoConstraints="NO" id="rKk-iZ-pgK">
+                                                <rect key="frame" x="0.0" y="0.0" width="782" height="270"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4tS-tv-Oh4">
+                                        <rect key="frame" x="15" y="310" width="1890" height="525"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qdO-tD-1aV">
+                                            <size key="itemSize" width="423" height="363"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="50" minY="0.0" maxX="50" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="VideoCollectionViewCell" id="4Ao-ZV-og4" customClass="VideosCollectionViewCell" customModule="StarcraftWatch" customModuleProvider="target">
+                                                <rect key="frame" x="50" y="0.0" width="423" height="363"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="423" height="363"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GqJ-Lv-cv3">
+                                                            <rect key="frame" x="0.0" y="0.0" width="423" height="363"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rfw-ux-1Fc" userLabel="Video Image View">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="423" height="234"/>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ch7-rD-Jrc">
+                                                                    <rect key="frame" x="5" y="239" width="413" height="119"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="ch7-rD-Jrc" secondAttribute="trailing" constant="5" id="EoH-9I-OSD"/>
+                                                                <constraint firstItem="ch7-rD-Jrc" firstAttribute="leading" secondItem="GqJ-Lv-cv3" secondAttribute="leading" constant="5" id="MEX-Kg-Wr8"/>
+                                                                <constraint firstItem="Rfw-ux-1Fc" firstAttribute="leading" secondItem="GqJ-Lv-cv3" secondAttribute="leading" id="Mz1-Jp-n9Z"/>
+                                                                <constraint firstItem="ch7-rD-Jrc" firstAttribute="top" secondItem="Rfw-ux-1Fc" secondAttribute="bottom" constant="5" id="Nku-dY-QFi"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Rfw-ux-1Fc" secondAttribute="trailing" id="csy-YZ-zpD"/>
+                                                                <constraint firstItem="Rfw-ux-1Fc" firstAttribute="top" secondItem="GqJ-Lv-cv3" secondAttribute="top" id="iVx-dF-LVw"/>
+                                                                <constraint firstItem="Rfw-ux-1Fc" firstAttribute="height" secondItem="GqJ-Lv-cv3" secondAttribute="height" multiplier="1/1.55" id="mqT-DT-TZu"/>
+                                                                <constraint firstAttribute="bottom" secondItem="ch7-rD-Jrc" secondAttribute="bottom" constant="5" id="wQ2-RM-xCf"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <constraints>
+                                                    <constraint firstItem="GqJ-Lv-cv3" firstAttribute="top" secondItem="4Ao-ZV-og4" secondAttribute="top" id="1pM-5t-sOF"/>
+                                                    <constraint firstItem="GqJ-Lv-cv3" firstAttribute="leading" secondItem="4Ao-ZV-og4" secondAttribute="leading" id="8dR-kp-Qzr"/>
+                                                    <constraint firstAttribute="bottom" secondItem="GqJ-Lv-cv3" secondAttribute="bottom" id="doF-Nd-wVG"/>
+                                                    <constraint firstAttribute="trailing" secondItem="GqJ-Lv-cv3" secondAttribute="trailing" id="zQn-p0-OKO"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="videoDescriptionLabel" destination="ch7-rD-Jrc" id="MRZ-hK-2U0"/>
+                                                    <outlet property="videoImageView" destination="Rfw-ux-1Fc" id="L8r-7G-Sy0"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="DjS-hB-NqF"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="uDq-LX-ljn"/>
+                                        </connections>
+                                    </collectionView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="4tS-tv-Oh4" secondAttribute="trailing" constant="15" id="ZMB-3D-1BY"/>
+                                    <constraint firstItem="4tS-tv-Oh4" firstAttribute="leading" secondItem="Rde-Gm-btL" secondAttribute="leading" constant="15" id="mBW-mL-keo"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Rde-Gm-btL" secondAttribute="bottom" constant="50" id="Ndl-n4-2qs"/>
+                            <constraint firstItem="Rde-Gm-btL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="QFw-oS-FTi"/>
+                            <constraint firstItem="Rde-Gm-btL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="ebw-pY-HVw"/>
+                            <constraint firstAttribute="trailing" secondItem="Rde-Gm-btL" secondAttribute="trailing" id="zaH-hx-X87"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Pdo-BU-lQ4"/>
+                    <connections>
+                        <outlet property="videosCollectionView" destination="4tS-tv-Oh4" id="Dp9-7K-ohX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="291" y="418"/>
+        </scene>
+        <!--Video Detail View Controller-->
+        <scene sceneID="VU1-iE-Dc9">
+            <objects>
+                <viewController storyboardIdentifier="VideoDetailViewController" id="rLd-jr-JLD" customClass="VideoDetailViewController" customModule="StarcraftWatch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Lid-q6-5vH"/>
+                        <viewControllerLayoutGuide type="bottom" id="joC-QN-tcG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Sem-Ij-f7r">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nCx-CT-KrP">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DVe-Gk-rRx" userLabel="Video View">
+                                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sYE-yz-wLF">
+                                        <rect key="frame" x="0.0" y="1080" width="1920" height="0.0"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YI0-m5-yAy" userLabel="Channel Image View">
+                                                <rect key="frame" x="0.0" y="0.0" width="1878" height="0.0"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fb-wk-FMc" userLabel="Title Label">
+                                                <rect key="frame" x="1878" y="0.0" width="42" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="sYE-yz-wLF" firstAttribute="bottom" secondItem="DVe-Gk-rRx" secondAttribute="bottom" id="yQo-dh-NN9"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="nCx-CT-KrP" firstAttribute="top" secondItem="Lid-q6-5vH" secondAttribute="bottom" id="OPa-NL-cZx"/>
+                            <constraint firstAttribute="trailing" secondItem="nCx-CT-KrP" secondAttribute="trailing" id="UKP-Kh-4Yt"/>
+                            <constraint firstItem="joC-QN-tcG" firstAttribute="top" secondItem="nCx-CT-KrP" secondAttribute="bottom" id="hwt-Uo-iK8"/>
+                            <constraint firstItem="nCx-CT-KrP" firstAttribute="leading" secondItem="Sem-Ij-f7r" secondAttribute="leading" id="kKL-pI-VG4"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xpr-xl-L73" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2475" y="418"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="starcraft2" width="782" height="270"/>
+    </resources>
 </document>

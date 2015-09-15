@@ -8,18 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		8E50452A1BA7B2EC009D467B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5045291BA7B2EC009D467B /* AppDelegate.swift */; };
-		8E50452C1BA7B2EC009D467B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E50452B1BA7B2EC009D467B /* ViewController.swift */; };
 		8E50452F1BA7B2EC009D467B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E50452D1BA7B2EC009D467B /* Main.storyboard */; };
 		8E5045311BA7B2EC009D467B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E5045301BA7B2EC009D467B /* Assets.xcassets */; };
+		8E50453E1BA7B9B6009D467B /* VideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E50453D1BA7B9B6009D467B /* VideosViewController.swift */; };
+		8E5045411BA7B9CD009D467B /* VideosViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5045401BA7B9CD009D467B /* VideosViewControllerExtension.swift */; };
+		8E5045441BA7BA02009D467B /* VideosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5045431BA7BA02009D467B /* VideosCollectionViewCell.swift */; };
+		8E5045471BA7BAC5009D467B /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5045461BA7BAC5009D467B /* Video.swift */; };
+		8E50454A1BA7C093009D467B /* VideoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5045491BA7C093009D467B /* VideoDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8E5045261BA7B2EC009D467B /* StarcraftWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarcraftWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E5045291BA7B2EC009D467B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8E50452B1BA7B2EC009D467B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8E50452E1BA7B2EC009D467B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8E5045301BA7B2EC009D467B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E5045321BA7B2EC009D467B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E50453D1BA7B9B6009D467B /* VideosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosViewController.swift; sourceTree = "<group>"; };
+		8E5045401BA7B9CD009D467B /* VideosViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosViewControllerExtension.swift; sourceTree = "<group>"; };
+		8E5045431BA7BA02009D467B /* VideosCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosCollectionViewCell.swift; sourceTree = "<group>"; };
+		8E5045461BA7BAC5009D467B /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		8E5045491BA7C093009D467B /* VideoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,12 +61,64 @@
 			isa = PBXGroup;
 			children = (
 				8E5045291BA7B2EC009D467B /* AppDelegate.swift */,
-				8E50452B1BA7B2EC009D467B /* ViewController.swift */,
+				8E50453B1BA7B9A4009D467B /* Features */,
+				8E5045451BA7BABC009D467B /* Models */,
 				8E50452D1BA7B2EC009D467B /* Main.storyboard */,
 				8E5045301BA7B2EC009D467B /* Assets.xcassets */,
 				8E5045321BA7B2EC009D467B /* Info.plist */,
 			);
 			path = StarcraftWatch;
+			sourceTree = "<group>";
+		};
+		8E50453B1BA7B9A4009D467B /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				8E50453C1BA7B9A4009D467B /* Videos Collection */,
+				8E5045481BA7BF9E009D467B /* Video Detail Page */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		8E50453C1BA7B9A4009D467B /* Videos Collection */ = {
+			isa = PBXGroup;
+			children = (
+				8E5045421BA7B9EB009D467B /* Cells */,
+				8E50453F1BA7B9CD009D467B /* Extensions */,
+				8E50453D1BA7B9B6009D467B /* VideosViewController.swift */,
+			);
+			path = "Videos Collection";
+			sourceTree = "<group>";
+		};
+		8E50453F1BA7B9CD009D467B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8E5045401BA7B9CD009D467B /* VideosViewControllerExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8E5045421BA7B9EB009D467B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8E5045431BA7BA02009D467B /* VideosCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		8E5045451BA7BABC009D467B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8E5045461BA7BAC5009D467B /* Video.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8E5045481BA7BF9E009D467B /* Video Detail Page */ = {
+			isa = PBXGroup;
+			children = (
+				8E5045491BA7C093009D467B /* VideoDetailViewController.swift */,
+			);
+			path = "Video Detail Page";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -92,6 +152,7 @@
 				TargetAttributes = {
 					8E5045251BA7B2EC009D467B = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 5ZZ7W4SB26;
 					};
 				};
 			};
@@ -130,8 +191,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E50452C1BA7B2EC009D467B /* ViewController.swift in Sources */,
+				8E50453E1BA7B9B6009D467B /* VideosViewController.swift in Sources */,
+				8E50454A1BA7C093009D467B /* VideoDetailViewController.swift in Sources */,
+				8E5045411BA7B9CD009D467B /* VideosViewControllerExtension.swift in Sources */,
+				8E5045441BA7BA02009D467B /* VideosCollectionViewCell.swift in Sources */,
 				8E50452A1BA7B2EC009D467B /* AppDelegate.swift in Sources */,
+				8E5045471BA7BAC5009D467B /* Video.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,10 +300,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "";
 				INFOPLIST_FILE = StarcraftWatch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.prolificinteractive.StarcraftWatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "c7b982f3-86ac-4fe3-8690-96aa04fd5fab";
 			};
 			name = Debug;
 		};
@@ -247,10 +314,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "";
 				INFOPLIST_FILE = StarcraftWatch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.prolificinteractive.StarcraftWatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "c7b982f3-86ac-4fe3-8690-96aa04fd5fab";
 			};
 			name = Release;
 		};
