@@ -15,6 +15,7 @@
 		8E5045441BA7BA02009D467B /* VideosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5045431BA7BA02009D467B /* VideosCollectionViewCell.swift */; };
 		8E5045471BA7BAC5009D467B /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5045461BA7BAC5009D467B /* Video.swift */; };
 		8E50454A1BA7C093009D467B /* VideoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5045491BA7C093009D467B /* VideoDetailViewController.swift */; };
+		8E50455E1BA90430009D467B /* HCYoutubeParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E50455C1BA90430009D467B /* HCYoutubeParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,9 @@
 		8E5045431BA7BA02009D467B /* VideosCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosCollectionViewCell.swift; sourceTree = "<group>"; };
 		8E5045461BA7BAC5009D467B /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		8E5045491BA7C093009D467B /* VideoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoDetailViewController.swift; sourceTree = "<group>"; };
+		8E50455B1BA90430009D467B /* HCYoutubeParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCYoutubeParser.h; sourceTree = "<group>"; };
+		8E50455C1BA90430009D467B /* HCYoutubeParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCYoutubeParser.m; sourceTree = "<group>"; };
+		8E5045601BA9055F009D467B /* StarcraftWatch-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "StarcraftWatch-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,7 @@
 				8E50452D1BA7B2EC009D467B /* Main.storyboard */,
 				8E5045301BA7B2EC009D467B /* Assets.xcassets */,
 				8E5045321BA7B2EC009D467B /* Info.plist */,
+				8E5045601BA9055F009D467B /* StarcraftWatch-Bridging-Header.h */,
 			);
 			path = StarcraftWatch;
 			sourceTree = "<group>";
@@ -125,8 +130,18 @@
 		8E50454B1BA8FD29009D467B /* External Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				8E5045591BA90430009D467B /* HCYoutubeParser */,
 			);
 			path = "External Libraries";
+			sourceTree = "<group>";
+		};
+		8E5045591BA90430009D467B /* HCYoutubeParser */ = {
+			isa = PBXGroup;
+			children = (
+				8E50455B1BA90430009D467B /* HCYoutubeParser.h */,
+				8E50455C1BA90430009D467B /* HCYoutubeParser.m */,
+			);
+			path = HCYoutubeParser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +218,7 @@
 				8E50454A1BA7C093009D467B /* VideoDetailViewController.swift in Sources */,
 				8E5045411BA7B9CD009D467B /* VideosViewControllerExtension.swift in Sources */,
 				8E5045441BA7BA02009D467B /* VideosCollectionViewCell.swift in Sources */,
+				8E50455E1BA90430009D467B /* HCYoutubeParser.m in Sources */,
 				8E50452A1BA7B2EC009D467B /* AppDelegate.swift in Sources */,
 				8E5045471BA7BAC5009D467B /* Video.swift in Sources */,
 			);
@@ -306,28 +322,36 @@
 		8E5045361BA7B2EC009D467B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = StarcraftWatch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.prolificinteractive.StarcraftWatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "c7b982f3-86ac-4fe3-8690-96aa04fd5fab";
+				SWIFT_OBJC_BRIDGING_HEADER = "./StarcraftWatch/$(PROJECT_NAME)-Bridging-Header.h";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/$(PROJECT_NAME)";
 			};
 			name = Debug;
 		};
 		8E5045371BA7B2EC009D467B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = StarcraftWatch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.prolificinteractive.StarcraftWatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "c7b982f3-86ac-4fe3-8690-96aa04fd5fab";
+				SWIFT_OBJC_BRIDGING_HEADER = "./StarcraftWatch/$(PROJECT_NAME)-Bridging-Header.h";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/$(PROJECT_NAME)";
 			};
 			name = Release;
 		};

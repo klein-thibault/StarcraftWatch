@@ -24,12 +24,14 @@ class VideoDetailViewController: UIViewController {
 
     @IBAction func playButtonTapped(sender: AnyObject) {
         let playerVC = AVPlayerViewController()
-        let asset = AVAsset(URL: video!.URL)
-        let playerItem = AVPlayerItem(asset: asset)
-        playerVC.player = AVPlayer(playerItem: playerItem)
+        if let videoURL = self.video?.videoFormattedURL() {
+            let asset = AVAsset(URL: videoURL)
+            let playerItem = AVPlayerItem(asset: asset)
+            playerVC.player = AVPlayer(playerItem: playerItem)
 
-        self.presentViewController(playerVC, animated: true) { () -> Void in
-            playerVC.player?.play()
+            self.presentViewController(playerVC, animated: true) { () -> Void in
+                playerVC.player?.play()
+            }
         }
     }
 
