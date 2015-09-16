@@ -16,7 +16,7 @@ class VideosCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var videoDescriptionLabel: UILabel!
 
     func setup(video: Video) {
-        self.videoImageView.image = video.thumbnail
+        self.videoImageView.imageFromUrl(video.thumbnailURL)
         self.videoDescriptionLabel.text = video.name
     }
 

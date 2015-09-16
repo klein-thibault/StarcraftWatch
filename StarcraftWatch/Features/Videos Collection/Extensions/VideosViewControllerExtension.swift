@@ -17,16 +17,17 @@ extension VideosViewController: UICollectionViewDelegate, UICollectionViewDataSo
 
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell: VideosCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier(VideosCollectionViewCell.identifier, forIndexPath: indexPath) as! VideosCollectionViewCell
-        // TODO: use real video data
-        let video = self.videos[indexPath.row]
+        let youtubeSearchResult = self.videos[indexPath.row]
+        let video = youtubeSearchResult.video
         cell.setup(video)
+
         return cell
     }
 
     // MARK: UICollectionViewDelegate Methods
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let videoDetailVC = self.storyboard?.instantiateViewControllerWithIdentifier(VideoDetailViewController.videoDetailViewControllerIdentifier) as! VideoDetailViewController
-        videoDetailVC.video = self.videos[indexPath.row]
+        videoDetailVC.video = self.videos[indexPath.row].video
         self.navigationController?.pushViewController(videoDetailVC, animated: true)
     }
 

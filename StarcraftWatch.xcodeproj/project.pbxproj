@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4033C2ABA79E6B64EAE6F662 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2424980E81C3252C93C9B55 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		8E27E4511BAA258F008C2C17 /* YouTubeSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E27E4501BAA258F008C2C17 /* YouTubeSearchResult.swift */; };
+		8E27E4541BAA2BDF008C2C17 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E27E4531BAA2BDF008C2C17 /* UIImageViewExtension.swift */; };
 		8E50452A1BA7B2EC009D467B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5045291BA7B2EC009D467B /* AppDelegate.swift */; };
 		8E50452F1BA7B2EC009D467B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E50452D1BA7B2EC009D467B /* Main.storyboard */; };
 		8E5045311BA7B2EC009D467B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E5045301BA7B2EC009D467B /* Assets.xcassets */; };
@@ -21,6 +23,8 @@
 
 /* Begin PBXFileReference section */
 		45D248B10A8E3DD88E9CDC54 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		8E27E4501BAA258F008C2C17 /* YouTubeSearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubeSearchResult.swift; sourceTree = "<group>"; };
+		8E27E4531BAA2BDF008C2C17 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		8E5045261BA7B2EC009D467B /* StarcraftWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarcraftWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E5045291BA7B2EC009D467B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E50452E1BA7B2EC009D467B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -67,6 +71,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8E27E4521BAA2BCE008C2C17 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8E27E4531BAA2BDF008C2C17 /* UIImageViewExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		8E50451D1BA7B2EC009D467B = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				8E5045291BA7B2EC009D467B /* AppDelegate.swift */,
+				8E27E4521BAA2BCE008C2C17 /* Extensions */,
 				8E50453B1BA7B9A4009D467B /* Features */,
 				8E5045451BA7BABC009D467B /* Models */,
 				8E50454B1BA8FD29009D467B /* External Libraries */,
@@ -139,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				8E5045461BA7BAC5009D467B /* Video.swift */,
+				8E27E4501BAA258F008C2C17 /* YouTubeSearchResult.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -295,7 +309,9 @@
 				8E5045411BA7B9CD009D467B /* VideosViewControllerExtension.swift in Sources */,
 				8E5045441BA7BA02009D467B /* VideosCollectionViewCell.swift in Sources */,
 				8E50455E1BA90430009D467B /* HCYoutubeParser.m in Sources */,
+				8E27E4541BAA2BDF008C2C17 /* UIImageViewExtension.swift in Sources */,
 				8E50452A1BA7B2EC009D467B /* AppDelegate.swift in Sources */,
+				8E27E4511BAA258F008C2C17 /* YouTubeSearchResult.swift in Sources */,
 				8E5045471BA7BAC5009D467B /* Video.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

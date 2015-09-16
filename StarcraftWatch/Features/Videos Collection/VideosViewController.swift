@@ -13,19 +13,20 @@ class VideosViewController: UIViewController {
 
     @IBOutlet weak var videosCollectionView: UICollectionView!
 
-    var videos = Video.dummyVideos()
+    var videos = Array<YouTubeSearchResult>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.videosCollectionView.reloadData()
-
-        Alamofire.request(.GET, "https://www.googleapis.com/youtube/v3/search?key=AIzaSyAsE2Is-wYoWoWzp56e6G7YTGmKGlsaGjk&channelId=UCU1nH5X8eC0aD3PkveRjjgw&part=snippet,id&order=date&maxResults=50", parameters: nil)
-            .responseJSON { (request, ResponseSerializer, data) -> Void in
-                print(data)
-                // Returns all the videos for SC2 channel
-                // Need to get all informations
-                // Need to make another API call to get the video URL based on the video ID
+        Alamofire.request(.GET, "https://www.googleapis.com/youtube/v3/search?key=AIzaSyAsE2Is-wYoWoWzp56e6G7YTGmKGlsaGjk&channelId=UCU1nH5X8eC0aD3PkveRjjgw&part=snippet,id&order=date&maxResults=50&type=video", parameters: nil)
+            .responseJSON { (_, _, result) -> Void in
+                let JSON: NSDictionary = result.value as! NSDictionary
+                let items = JSON["items"] as! NSArray
+                for item in items {
+                    let youtubeSearchItem = YouTubeSearchResult(jsonDict: item as! NSDictionary)
+                    self.videos.append(youtubeSearchItem)
+                }
+                self.videosCollectionView.reloadData()
         }
     }
 

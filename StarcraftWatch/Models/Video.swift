@@ -11,23 +11,27 @@ import UIKit
 
 struct Video {
 
-    var URL: NSURL
+    let id: String
+    var URL: NSURL?
     let name: String
-    let thumbnail: UIImage
+    let thumbnailURL: NSURL
     let description: String
 
-    init(name: String, url: NSURL, description: String, thumbnail: UIImage) {
+    init(id: String, name: String, description: String, thumbnail: NSURL) {
+        self.id = id
         self.name = name
-        self.URL = url
         self.description = description
-        self.thumbnail = thumbnail
+        self.thumbnailURL = thumbnail
     }
 
     static func defaultVideo() -> Video {
-        return Video(name: "Jaedong vs Lilbow - WCS EU S3 - Premier Group Stage Ro16 - Groupe D - 09/09/15",
-            url: NSURL(string: "https://www.youtube.com/watch?v=FaHd3WhtEi0")!,
+        return Video(
+            id: "1",
+            name: "Jaedong vs Lilbow - WCS EU S3 - Premier Group Stage Ro16 - Groupe D - 09/09/15",
+//            url: NSURL(string: "https://www.youtube.com/watch?v=FaHd3WhtEi0")!,
             description: "Jaedong vs Lilbow!",
-            thumbnail: UIImage(named: "thumbnail")!)
+            thumbnail: NSURL(string: "https://i.ytimg.com/vi/77O8u_G21ps/hqdefault.jpg")!
+        )
     }
 
     static func dummyVideos() -> Array<Video> {
@@ -43,6 +47,10 @@ struct Video {
     }
 
     func videoFormattedURL() -> NSURL? {
+        guard (self.URL != nil) else {
+            return nil
+        }
+
         let videosDict = HCYoutubeParser.h264videosWithYoutubeURL(self.URL)
         if let video720URL = videosDict["hd720"] as? String {
             return NSURL(string: video720URL)!

@@ -8,6 +8,7 @@
 
 import UIKit
 import AVKit
+import Alamofire
 
 class VideoDetailViewController: UIViewController {
 
@@ -20,6 +21,11 @@ class VideoDetailViewController: UIViewController {
     override func viewDidLoad() {
         self.playButton.setNeedsFocusUpdate()
         self.playButton.updateFocusIfNeeded()
+
+        if let videoId = self.video?.id {
+            let urlStr = "https://www.youtube.com/watch?v=\(videoId)"
+            self.video?.URL = (NSURL(string: urlStr))
+        }
     }
 
     @IBAction func playButtonTapped(sender: AnyObject) {
