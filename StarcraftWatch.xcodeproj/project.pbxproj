@@ -63,6 +63,7 @@
 				8E5045291BA7B2EC009D467B /* AppDelegate.swift */,
 				8E50453B1BA7B9A4009D467B /* Features */,
 				8E5045451BA7BABC009D467B /* Models */,
+				8E50454B1BA8FD29009D467B /* External Libraries */,
 				8E50452D1BA7B2EC009D467B /* Main.storyboard */,
 				8E5045301BA7B2EC009D467B /* Assets.xcassets */,
 				8E5045321BA7B2EC009D467B /* Info.plist */,
@@ -119,6 +120,13 @@
 				8E5045491BA7C093009D467B /* VideoDetailViewController.swift */,
 			);
 			path = "Video Detail Page";
+			sourceTree = "<group>";
+		};
+		8E50454B1BA8FD29009D467B /* External Libraries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "External Libraries";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,6 +350,7 @@
 				8E5045371BA7B2EC009D467B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
