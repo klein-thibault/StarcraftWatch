@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class VideosViewController: UIViewController {
 
@@ -18,6 +19,14 @@ class VideosViewController: UIViewController {
         super.viewDidLoad()
 
         self.videosCollectionView.reloadData()
+
+        Alamofire.request(.GET, "https://www.googleapis.com/youtube/v3/search?key=AIzaSyAsE2Is-wYoWoWzp56e6G7YTGmKGlsaGjk&channelId=UCU1nH5X8eC0aD3PkveRjjgw&part=snippet,id&order=date&maxResults=50", parameters: nil)
+            .responseJSON { (request, ResponseSerializer, data) -> Void in
+                print(data)
+                // Returns all the videos for SC2 channel
+                // Need to get all informations
+                // Need to make another API call to get the video URL based on the video ID
+        }
     }
 
 }
