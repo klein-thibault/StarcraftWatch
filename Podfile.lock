@@ -1,0 +1,20 @@
+PODS:
+  - Alamofire (2.0.0)
+
+DEPENDENCIES:
+  - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, branch `tvOS`)
+
+EXTERNAL SOURCES:
+  Alamofire:
+    :branch: tvOS
+    :git: https://github.com/Alamofire/Alamofire.git
+
+CHECKOUT OPTIONS:
+  Alamofire:
+    :commit: 2d8466cd2f97015ad99cf84f173f60d0b73942d2
+    :git: https://github.com/Alamofire/Alamofire.git
+
+SPEC CHECKSUMS:
+  Alamofire: e9f3f88721050913e7cfac3dc83436d6d007f738
+
+COCOAPODS: 0.39.0.beta.4
