@@ -2,6 +2,7 @@
   "images" : [
     {
       "idiom" : "tv",
+      "filename" : "starcraft20220logo.png",
       "scale" : "1x"
     }
   ],
