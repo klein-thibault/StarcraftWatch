@@ -36,19 +36,4 @@ extension VideosViewController: UICollectionViewDelegate, UICollectionViewDataSo
         return true
     }
 
-    func collectionView(collectionView: UICollectionView, didUpdateFocusInContext context: UICollectionViewFocusUpdateContext, withAnimationCoordinator coordinator: UIFocusAnimationCoordinator) {
-        let nextCell = context.nextFocusedView
-        var transform = CATransform3DIdentity;
-        transform = CATransform3DScale(transform, 1.2, 1.2, 1.0)
-        UIView.animateWithDuration(0.25) { () -> Void in
-            nextCell?.layer.transform = transform
-        }
-
-        let prevCell = context.previouslyFocusedView
-        transform = CATransform3DScale(transform, 0.8, 0.8, 1.0)
-        UIView.animateWithDuration(0.25) { () -> Void in
-            prevCell?.layer.transform = transform
-        }
-    }
-
 }
