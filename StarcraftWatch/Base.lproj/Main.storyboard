@@ -146,27 +146,27 @@
                                 <rect key="frame" x="50" y="50" width="1820" height="980"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="0HY-is-QKd">
-                                        <rect key="frame" x="0.0" y="0.0" width="1820" height="744"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1820" height="743"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R5T-B5-SHd">
-                                                <rect key="frame" x="0.0" y="0.0" width="1322" height="744"/>
+                                                <rect key="frame" x="0.0" y="22" width="1244" height="700"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="744" id="8O3-vf-3Tb"/>
+                                                    <constraint firstAttribute="height" constant="700" id="8O3-vf-3Tb"/>
                                                     <constraint firstAttribute="width" secondItem="R5T-B5-SHd" secondAttribute="height" multiplier="16:9" id="Rgu-Qt-Qte"/>
                                                 </constraints>
                                             </imageView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5eb-QG-Xi3">
-                                                <rect key="frame" x="1372" y="0.0" width="448" height="744"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="5eb-QG-Xi3">
+                                                <rect key="frame" x="1294" y="22" width="526" height="700"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AJj-nu-5cL" userLabel="Video Title">
-                                                        <rect key="frame" x="0.0" y="0.0" width="448" height="372"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="526" height="525"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="75"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3K-3I-OCz" userLabel="Video Description">
-                                                        <rect key="frame" x="0.0" y="372" width="448" height="372"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3K-3I-OCz" userLabel="Video Description">
+                                                        <rect key="frame" x="0.0" y="525" width="526" height="175"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -178,7 +178,8 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vun-pJ-CT4">
-                                        <rect key="frame" x="0.0" y="794" width="1820" height="85"/>
+                                        <rect key="frame" x="0.0" y="793" width="1820" height="86"/>
+                                        <color key="backgroundColor" red="0.24712789058685303" green="0.49789559841156006" blue="0.72795569896697998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                         <state key="normal" title="Play"/>
                                         <connections>
@@ -212,7 +213,9 @@
                     </view>
                     <connections>
                         <outlet property="playButton" destination="vun-pJ-CT4" id="iJf-jq-MNK"/>
+                        <outlet property="videoDescriptionLabel" destination="M3K-3I-OCz" id="Qy9-SU-5za"/>
                         <outlet property="videoThumbnailImageView" destination="R5T-B5-SHd" id="Dm3-KA-kSm"/>
+                        <outlet property="videoTitleLabel" destination="AJj-nu-5cL" id="iVp-Gn-r4n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xpr-xl-L73" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -16,6 +16,8 @@ class VideoDetailViewController: UIViewController {
 
     @IBOutlet weak var videoThumbnailImageView: UIImageView!
     @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var videoTitleLabel: UILabel!
+    @IBOutlet weak var videoDescriptionLabel: UILabel!
 
     var video: Video?
 
@@ -26,6 +28,8 @@ class VideoDetailViewController: UIViewController {
         if let thumbnailURL = self.video?.largeThumbnailURL {
             self.videoThumbnailImageView.imageFromUrl(thumbnailURL)
         }
+        self.videoTitleLabel.text = self.video?.name
+        self.videoDescriptionLabel.text = self.video?.description
     }
 
     @IBAction func playButtonTapped(sender: AnyObject) {
