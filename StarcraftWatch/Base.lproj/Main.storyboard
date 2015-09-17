@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="9046" systemVersion="14F27" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" initialViewController="MAM-so-yOP">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9035"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -34,7 +35,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Rde-Gm-btL">
-                                <rect key="frame" x="0.0" y="195" width="1920" height="835"/>
+                                <rect key="frame" x="0.0" y="50" width="1920" height="980"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="bQa-sm-mPZ">
                                         <rect key="frame" x="569" y="0.0" width="782" height="270"/>
@@ -45,7 +46,7 @@
                                         </subviews>
                                     </stackView>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4tS-tv-Oh4">
-                                        <rect key="frame" x="15" y="310" width="1890" height="525"/>
+                                        <rect key="frame" x="15" y="310" width="1890" height="670"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qdO-tD-1aV">
                                             <size key="itemSize" width="423" height="363"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -145,21 +146,39 @@
                                 <rect key="frame" x="50" y="50" width="1820" height="980"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="0HY-is-QKd">
-                                        <rect key="frame" x="0.0" y="0.0" width="1820" height="743.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1820" height="744"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R5T-B5-SHd">
-                                                <rect key="frame" x="0.0" y="372" width="885" height="0.0"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="1322" height="744"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="744" id="8O3-vf-3Tb"/>
+                                                    <constraint firstAttribute="width" secondItem="R5T-B5-SHd" secondAttribute="height" multiplier="16:9" id="Rgu-Qt-Qte"/>
+                                                </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AJj-nu-5cL">
-                                                <rect key="frame" x="935" y="361.5" width="885" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5eb-QG-Xi3">
+                                                <rect key="frame" x="1372" y="0.0" width="448" height="744"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AJj-nu-5cL" userLabel="Video Title">
+                                                        <rect key="frame" x="0.0" y="0.0" width="448" height="372"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3K-3I-OCz" userLabel="Video Description">
+                                                        <rect key="frame" x="0.0" y="372" width="448" height="372"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="5eb-QG-Xi3" firstAttribute="height" secondItem="R5T-B5-SHd" secondAttribute="height" id="Stx-Og-piT"/>
+                                        </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vun-pJ-CT4">
-                                        <rect key="frame" x="0.0" y="793.5" width="1820" height="86"/>
+                                        <rect key="frame" x="0.0" y="794" width="1820" height="85"/>
                                         <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                         <state key="normal" title="Play"/>
                                         <connections>
@@ -167,10 +186,10 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="sYE-yz-wLF">
-                                        <rect key="frame" x="0.0" y="929.5" width="1820" height="50.5"/>
+                                        <rect key="frame" x="0.0" y="929" width="1820" height="51"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fb-wk-FMc" userLabel="Title Label">
-                                                <rect key="frame" x="15" y="15" width="1790" height="20.5"/>
+                                                <rect key="frame" x="15" y="15" width="1790" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -179,6 +198,9 @@
                                         <edgeInsets key="layoutMargins" top="15" left="15" bottom="15" right="15"/>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="sYE-yz-wLF" firstAttribute="top" secondItem="nCx-CT-KrP" secondAttribute="top" constant="929" id="N43-dZ-0ZL"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <constraints>
@@ -190,6 +212,7 @@
                     </view>
                     <connections>
                         <outlet property="playButton" destination="vun-pJ-CT4" id="iJf-jq-MNK"/>
+                        <outlet property="videoThumbnailImageView" destination="R5T-B5-SHd" id="Dm3-KA-kSm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xpr-xl-L73" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -27,7 +27,8 @@ extension VideosViewController: UICollectionViewDelegate, UICollectionViewDataSo
     // MARK: UICollectionViewDelegate Methods
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let videoDetailVC = self.storyboard?.instantiateViewControllerWithIdentifier(VideoDetailViewController.videoDetailViewControllerIdentifier) as! VideoDetailViewController
-        videoDetailVC.video = self.videos[indexPath.row].video
+        let youtubeSearchResult = self.videos[indexPath.row]
+        videoDetailVC.video = youtubeSearchResult.video
         self.navigationController?.pushViewController(videoDetailVC, animated: true)
     }
 

@@ -15,13 +15,15 @@ struct Video {
     var URL: NSURL?
     let name: String
     let thumbnailURL: NSURL
+    let largeThumbnailURL: NSURL
     let description: String
 
-    init(id: String, name: String, description: String, thumbnail: NSURL) {
+    init(id: String, name: String, description: String, thumbnail: NSURL, largeThumbnailURL: NSURL) {
         self.id = id
         self.name = name
         self.description = description
         self.thumbnailURL = thumbnail
+        self.largeThumbnailURL = largeThumbnailURL
     }
 
     func videoFormattedDescription() -> String {

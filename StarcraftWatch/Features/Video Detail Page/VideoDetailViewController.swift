@@ -14,6 +14,7 @@ class VideoDetailViewController: UIViewController {
 
     static let videoDetailViewControllerIdentifier = "VideoDetailViewController"
 
+    @IBOutlet weak var videoThumbnailImageView: UIImageView!
     @IBOutlet weak var playButton: UIButton!
 
     var video: Video?
@@ -21,6 +22,10 @@ class VideoDetailViewController: UIViewController {
     override func viewDidLoad() {
         self.playButton.setNeedsFocusUpdate()
         self.playButton.updateFocusIfNeeded()
+
+        if let thumbnailURL = self.video?.largeThumbnailURL {
+            self.videoThumbnailImageView.imageFromUrl(thumbnailURL)
+        }
     }
 
     @IBAction func playButtonTapped(sender: AnyObject) {
