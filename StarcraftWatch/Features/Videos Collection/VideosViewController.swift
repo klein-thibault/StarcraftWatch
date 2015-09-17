@@ -13,12 +13,13 @@ class VideosViewController: UIViewController {
 
     @IBOutlet weak var videosCollectionView: UICollectionView!
 
+    let videosURL = "https://www.googleapis.com/youtube/v3/search?key=AIzaSyAsE2Is-wYoWoWzp56e6G7YTGmKGlsaGjk&channelId=UCU1nH5X8eC0aD3PkveRjjgw&part=snippet,id&order=date&maxResults=50&type=video"
     var videos = Array<YouTubeSearchResult>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        Alamofire.request(.GET, "https://www.googleapis.com/youtube/v3/search?key=AIzaSyAsE2Is-wYoWoWzp56e6G7YTGmKGlsaGjk&channelId=UCU1nH5X8eC0aD3PkveRjjgw&part=snippet,id&order=date&maxResults=50&type=video", parameters: nil)
+        Alamofire.request(.GET, self.videosURL, parameters: nil)
             .responseJSON { (_, _, result) -> Void in
                 let JSON: NSDictionary = result.value as! NSDictionary
                 let items = JSON["items"] as! NSArray
