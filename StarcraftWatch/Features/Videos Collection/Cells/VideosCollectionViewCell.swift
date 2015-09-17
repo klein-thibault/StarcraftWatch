@@ -15,6 +15,11 @@ class VideosCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var videoImageView: UIImageView!
     @IBOutlet weak var videoDescriptionLabel: UILabel!
 
+    override func awakeFromNib() {
+        // Enable parallax effect on the UIImageView when user has the focus on the cell
+        self.videoImageView.adjustsImageWhenAncestorFocused = true
+    }
+
     func setup(video: Video) {
         self.videoImageView.imageFromUrl(video.thumbnailURL)
         self.videoDescriptionLabel.text = video.name
