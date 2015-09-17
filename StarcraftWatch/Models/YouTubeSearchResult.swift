@@ -22,7 +22,7 @@ struct YouTubeSearchResult {
         let videoId = idDict["videoId"] as! String
         let snippetDict = jsonDict["snippet"] as! NSDictionary
         let thumbnailsDict = snippetDict["thumbnails"] as! NSDictionary
-        let highThumbnailDict = thumbnailsDict["default"] as! NSDictionary
+        let highThumbnailDict = thumbnailsDict["medium"] as! NSDictionary
         let thumbnailStr = highThumbnailDict["url"] as! String
         let title = snippetDict["title"] as! String
         let description = snippetDict["description"] as! String

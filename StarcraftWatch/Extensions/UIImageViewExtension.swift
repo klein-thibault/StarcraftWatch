@@ -11,12 +11,14 @@ import UIKit
 extension UIImageView {
 
     public func imageFromUrl(URL: NSURL) {
-        let request = NSURLRequest(URL: URL)
+        let request = NSURLRequest(URL: URL, cachePolicy: .UseProtocolCachePolicy, timeoutInterval: 60)
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: configuration)
         let imageData = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
             if let imageData = data {
-                self.image = UIImage(data: imageData)
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.image = UIImage(data: imageData)
+                })
             }
         })
         imageData.resume()
