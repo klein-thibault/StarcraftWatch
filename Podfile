@@ -1,7 +1,6 @@
 platform :tvos, '9.0'
 use_frameworks!
 
-source 'https://bitbucket.org/prolificinteractive/pibrary-ios'
 source 'https://github.com/CocoaPods/Specs.git'
 
 #Per pod basis warning inhibits? =>  use :inhibit_warnings => true

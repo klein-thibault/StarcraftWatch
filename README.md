@@ -6,14 +6,10 @@ The app is a YouTube video player, pulling videos from [SC2 Pro Gaming](https://
 
 ### How to start the app
 
-Since tvOS has just released, Cocoapods has not been udpated yet to support tvOS (at least not on the public release). I'm using a specific Gemfile to install the pods with a tvOS Cocoapods compatible version. To be able to install the pods you will have to install `bundle`. 
 
-* In your terminal do `$ gem install bundle`.
-*  In the project root folder do `$ bundle install` to install the Gemfile specific Cocoapod
-*  From now on, you need to use `bundle exec` before every `pod` command, so if you want to install the pods, do `$ bundle exec pod install`
-*  You should now be able to run the app on the Apple TV simulator (or the actual Apple TV if you are a lucky developer)!
+* Make sure to use cocoapods with version superior or equal to `0.39.0`
+* In your terminal do `$ pod install`.
 
-You can find more details from the Cocoapods Github [here](https://github.com/CocoaPods/Core/pull/263) and the Cocoapods documentation about using Gemfiles [here](http://guides.cocoapods.org/using/a-gemfile.html).
 
 ### Contact
 
