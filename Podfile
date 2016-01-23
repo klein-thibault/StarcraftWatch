@@ -11,4 +11,4 @@ link_with 'StarcraftWatch'
 #Pods list
 
 #Networking
-pod 'Alamofire'
+pod 'Alamofire', '3.1.5'
