@@ -11,4 +11,4 @@ link_with 'StarcraftWatch'
 #Pods list
 
 #Networking
-pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'tvOS'
+pod 'Alamofire'
