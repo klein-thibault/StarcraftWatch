@@ -19,15 +19,18 @@ class VideosViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        Alamofire.request(.GET, self.videosURL, parameters: nil)
-            .responseJSON { (_, _, result) -> Void in
-                let JSON: NSDictionary = result.value as! NSDictionary
-                let items = JSON["items"] as! NSArray
-                for item in items {
-                    let youtubeSearchItem = YouTubeSearchResult(jsonDict: item as! NSDictionary)
-                    self.videos.append(youtubeSearchItem)
-                }
-                self.videosCollectionView.reloadData()
+        Alamofire.request(.GET, self.videosURL).responseJSON { (response) -> Void in
+            guard response.result.isSuccess else {
+                return
+            }
+            let JSON: NSDictionary = response.result.value as! NSDictionary
+            let items = JSON["items"] as! NSArray
+            for item in items {
+                let youtubeSearchItem = YouTubeSearchResult(jsonDict: item as! NSDictionary)
+                self.videos.append(youtubeSearchItem)
+            }
+            self.videosCollectionView.reloadData()
+
         }
     }
 
