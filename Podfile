@@ -1,14 +1,15 @@
 platform :tvos, '9.0'
 use_frameworks!
 
-source 'https://github.com/CocoaPods/Specs.git'
-
-#Per pod basis warning inhibits? =>  use :inhibit_warnings => true
-inhibit_all_warnings!
-
-link_with 'StarcraftWatch'
-
-#Pods list
-
 #Networking
-pod 'Alamofire', '3.1.5'
+pod 'Alamofire'
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['EXPANDED_CODE_SIGN_IDENTITY'] = ""
+      config.build_settings['CODE_SIGNING_REQUIRED'] = "NO"
+      config.build_settings['CODE_SIGNING_ALLOWED'] = "NO"
+    end
+  end
+end

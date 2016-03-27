@@ -14,11 +14,10 @@
 		8E50452F1BA7B2EC009D467B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E50452D1BA7B2EC009D467B /* Main.storyboard */; };
 		8E5045311BA7B2EC009D467B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E5045301BA7B2EC009D467B /* Assets.xcassets */; };
 		8E50453E1BA7B9B6009D467B /* VideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E50453D1BA7B9B6009D467B /* VideosViewController.swift */; };
-		8E5045411BA7B9CD009D467B /* VideosViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5045401BA7B9CD009D467B /* VideosViewControllerExtension.swift */; };
 		8E5045441BA7BA02009D467B /* VideosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5045431BA7BA02009D467B /* VideosCollectionViewCell.swift */; };
 		8E5045471BA7BAC5009D467B /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5045461BA7BAC5009D467B /* Video.swift */; };
 		8E50454A1BA7C093009D467B /* VideoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5045491BA7C093009D467B /* VideoDetailViewController.swift */; };
-		8E50455E1BA90430009D467B /* HCYoutubeParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E50455C1BA90430009D467B /* HCYoutubeParser.m */; };
+		8E7B20E21CA84A3F00F111AB /* HCYoutubeParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B20E11CA84A3F00F111AB /* HCYoutubeParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,13 +30,12 @@
 		8E5045301BA7B2EC009D467B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E5045321BA7B2EC009D467B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E50453D1BA7B9B6009D467B /* VideosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosViewController.swift; sourceTree = "<group>"; };
-		8E5045401BA7B9CD009D467B /* VideosViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosViewControllerExtension.swift; sourceTree = "<group>"; };
 		8E5045431BA7BA02009D467B /* VideosCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosCollectionViewCell.swift; sourceTree = "<group>"; };
 		8E5045461BA7BAC5009D467B /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		8E5045491BA7C093009D467B /* VideoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoDetailViewController.swift; sourceTree = "<group>"; };
-		8E50455B1BA90430009D467B /* HCYoutubeParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCYoutubeParser.h; sourceTree = "<group>"; };
-		8E50455C1BA90430009D467B /* HCYoutubeParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCYoutubeParser.m; sourceTree = "<group>"; };
 		8E5045601BA9055F009D467B /* StarcraftWatch-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "StarcraftWatch-Bridging-Header.h"; sourceTree = "<group>"; };
+		8E7B20E01CA84A3F00F111AB /* HCYoutubeParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCYoutubeParser.h; sourceTree = "<group>"; };
+		8E7B20E11CA84A3F00F111AB /* HCYoutubeParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCYoutubeParser.m; sourceTree = "<group>"; };
 		A27256CF754205B696BD7C9E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C2424980E81C3252C93C9B55 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -126,18 +124,9 @@
 			isa = PBXGroup;
 			children = (
 				8E5045421BA7B9EB009D467B /* Cells */,
-				8E50453F1BA7B9CD009D467B /* Extensions */,
 				8E50453D1BA7B9B6009D467B /* VideosViewController.swift */,
 			);
 			path = "Videos Collection";
-			sourceTree = "<group>";
-		};
-		8E50453F1BA7B9CD009D467B /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				8E5045401BA7B9CD009D467B /* VideosViewControllerExtension.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		8E5045421BA7B9EB009D467B /* Cells */ = {
@@ -176,8 +165,8 @@
 		8E5045591BA90430009D467B /* HCYoutubeParser */ = {
 			isa = PBXGroup;
 			children = (
-				8E50455B1BA90430009D467B /* HCYoutubeParser.h */,
-				8E50455C1BA90430009D467B /* HCYoutubeParser.m */,
+				8E7B20E01CA84A3F00F111AB /* HCYoutubeParser.h */,
+				8E7B20E11CA84A3F00F111AB /* HCYoutubeParser.m */,
 			);
 			path = HCYoutubeParser;
 			sourceTree = "<group>";
@@ -306,9 +295,8 @@
 			files = (
 				8E50453E1BA7B9B6009D467B /* VideosViewController.swift in Sources */,
 				8E50454A1BA7C093009D467B /* VideoDetailViewController.swift in Sources */,
-				8E5045411BA7B9CD009D467B /* VideosViewControllerExtension.swift in Sources */,
 				8E5045441BA7BA02009D467B /* VideosCollectionViewCell.swift in Sources */,
-				8E50455E1BA90430009D467B /* HCYoutubeParser.m in Sources */,
+				8E7B20E21CA84A3F00F111AB /* HCYoutubeParser.m in Sources */,
 				8E27E4541BAA2BDF008C2C17 /* UIImageViewExtension.swift in Sources */,
 				8E50452A1BA7B2EC009D467B /* AppDelegate.swift in Sources */,
 				8E27E4511BAA258F008C2C17 /* YouTubeSearchResult.swift in Sources */,
@@ -415,7 +403,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A27256CF754205B696BD7C9E /* Pods.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -435,7 +423,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 45D248B10A8E3DD88E9CDC54 /* Pods.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

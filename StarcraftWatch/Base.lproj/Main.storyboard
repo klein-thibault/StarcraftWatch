@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="9046" systemVersion="14F27" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" initialViewController="MAM-so-yOP">
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" initialViewController="MAM-so-yOP">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9035"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -37,25 +37,17 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Rde-Gm-btL">
                                 <rect key="frame" x="0.0" y="50" width="1920" height="980"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="bQa-sm-mPZ">
-                                        <rect key="frame" x="569" y="0.0" width="782" height="270"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starcraft2" translatesAutoresizingMaskIntoConstraints="NO" id="rKk-iZ-pgK">
-                                                <rect key="frame" x="0.0" y="0.0" width="782" height="270"/>
-                                            </imageView>
-                                        </subviews>
-                                    </stackView>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4tS-tv-Oh4">
-                                        <rect key="frame" x="15" y="310" width="1890" height="670"/>
+                                    <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4tS-tv-Oh4">
+                                        <rect key="frame" x="15" y="0.0" width="1890" height="980"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qdO-tD-1aV">
                                             <size key="itemSize" width="423" height="363"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="headerReferenceSize" width="50" height="200"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="50" minY="0.0" maxX="50" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="VideoCollectionViewCell" id="4Ao-ZV-og4" customClass="VideosCollectionViewCell" customModule="StarcraftWatch" customModuleProvider="target">
-                                                <rect key="frame" x="50" y="0.0" width="423" height="363"/>
+                                                <rect key="frame" x="50" y="200" width="423" height="363"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="0.0" y="0.0" width="423" height="363"/>
@@ -101,6 +93,23 @@
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
+                                        <collectionReusableView key="sectionHeaderView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="VideosHeaderView" id="7nM-RT-Ai5">
+                                            <rect key="frame" x="0.0" y="0.0" width="1890" height="200"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starcraft2" translatesAutoresizingMaskIntoConstraints="NO" id="rKk-iZ-pgK">
+                                                    <rect key="frame" x="742" y="30" width="406" height="140"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="rKk-iZ-pgK" secondAttribute="height" multiplier="391:135" id="2S8-eG-iUL"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="rKk-iZ-pgK" firstAttribute="centerX" secondItem="7nM-RT-Ai5" secondAttribute="centerX" id="Ihu-a5-FLC"/>
+                                                <constraint firstItem="rKk-iZ-pgK" firstAttribute="centerY" secondItem="7nM-RT-Ai5" secondAttribute="centerY" id="OQQ-WX-8mu"/>
+                                                <constraint firstItem="rKk-iZ-pgK" firstAttribute="top" secondItem="7nM-RT-Ai5" secondAttribute="top" constant="30" id="bUJ-L9-0tC"/>
+                                            </constraints>
+                                        </collectionReusableView>
                                         <connections>
                                             <outlet property="dataSource" destination="BYZ-38-t0r" id="DjS-hB-NqF"/>
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="uDq-LX-ljn"/>
@@ -145,27 +154,29 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="nCx-CT-KrP">
                                 <rect key="frame" x="50" y="50" width="1820" height="980"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="0HY-is-QKd">
-                                        <rect key="frame" x="0.0" y="0.0" width="1820" height="743"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="0HY-is-QKd">
+                                        <rect key="frame" x="0.0" y="0.0" width="1820" height="844"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R5T-B5-SHd">
-                                                <rect key="frame" x="0.0" y="22" width="1244" height="700"/>
+                                                <rect key="frame" x="0.0" y="173" width="885" height="498"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="700" id="8O3-vf-3Tb"/>
                                                     <constraint firstAttribute="width" secondItem="R5T-B5-SHd" secondAttribute="height" multiplier="16:9" id="Rgu-Qt-Qte"/>
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="5eb-QG-Xi3">
-                                                <rect key="frame" x="1294" y="22" width="526" height="700"/>
+                                                <rect key="frame" x="935" y="377" width="885" height="90"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AJj-nu-5cL" userLabel="Video Title">
-                                                        <rect key="frame" x="0.0" y="0.0" width="526" height="525"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="75"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AJj-nu-5cL" userLabel="Video Title">
+                                                        <rect key="frame" x="0.0" y="0.0" width="885" height="60"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="300" id="2gO-V3-bbv"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3K-3I-OCz" userLabel="Video Description">
-                                                        <rect key="frame" x="0.0" y="525" width="526" height="175"/>
+                                                        <rect key="frame" x="0.0" y="60" width="885" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -174,34 +185,22 @@
                                             </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="5eb-QG-Xi3" firstAttribute="height" secondItem="R5T-B5-SHd" secondAttribute="height" id="Stx-Og-piT"/>
+                                            <constraint firstAttribute="height" constant="844" id="DV9-ow-DXa"/>
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vun-pJ-CT4">
-                                        <rect key="frame" x="0.0" y="793" width="1820" height="86"/>
+                                        <rect key="frame" x="0.0" y="894" width="1820" height="86"/>
                                         <color key="backgroundColor" red="0.24712789058685303" green="0.49789559841156006" blue="0.72795569896697998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="86" id="Idl-vu-BAz"/>
+                                        </constraints>
                                         <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                         <state key="normal" title="Play"/>
                                         <connections>
                                             <action selector="playButtonTapped:" destination="rLd-jr-JLD" eventType="primaryActionTriggered" id="O35-lt-3Ws"/>
                                         </connections>
                                     </button>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="sYE-yz-wLF">
-                                        <rect key="frame" x="0.0" y="929" width="1820" height="51"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fb-wk-FMc" userLabel="Title Label">
-                                                <rect key="frame" x="15" y="15" width="1790" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <edgeInsets key="layoutMargins" top="15" left="15" bottom="15" right="15"/>
-                                    </stackView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="sYE-yz-wLF" firstAttribute="top" secondItem="nCx-CT-KrP" secondAttribute="top" constant="929" id="N43-dZ-0ZL"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <constraints>

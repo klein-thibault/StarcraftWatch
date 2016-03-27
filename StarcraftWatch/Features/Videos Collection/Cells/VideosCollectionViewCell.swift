@@ -17,12 +17,17 @@ class VideosCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         // Enable parallax effect on the UIImageView when user has the focus on the cell
-        self.videoImageView.adjustsImageWhenAncestorFocused = true
+        videoImageView.adjustsImageWhenAncestorFocused = true
+    }
+
+    override func prepareForReuse() {
+        videoImageView.image = nil
+        super.prepareForReuse()
     }
 
     func setup(video: Video) {
-        self.videoImageView.imageFromUrl(video.thumbnailURL)
-        self.videoDescriptionLabel.text = video.name
+        videoImageView.imageFromUrl(video.thumbnailURL)
+        videoDescriptionLabel.text = video.name
     }
 
 }

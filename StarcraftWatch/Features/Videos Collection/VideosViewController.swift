@@ -36,3 +36,49 @@ class VideosViewController: UIViewController {
 
 }
 
+extension VideosViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+
+    // MARK: UICollectionViewDataSource Methods
+
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.videos.count
+    }
+
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell: VideosCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier(VideosCollectionViewCell.identifier,
+                                                                                                   forIndexPath: indexPath) as! VideosCollectionViewCell
+        let youtubeSearchResult = self.videos[indexPath.row]
+        let video = youtubeSearchResult.video
+        cell.setup(video)
+
+        return cell
+    }
+
+    // MARK: UICollectionViewDelegate Methods
+
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let videoDetailVC = self.storyboard?
+            .instantiateViewControllerWithIdentifier(VideoDetailViewController.videoDetailViewControllerIdentifier)
+            as! VideoDetailViewController
+        let youtubeSearchResult = self.videos[indexPath.row]
+        videoDetailVC.video = youtubeSearchResult.video
+        self.navigationController?.pushViewController(videoDetailVC, animated: true)
+    }
+
+    func collectionView(collectionView: UICollectionView,
+                        viewForSupplementaryElementOfKind kind: String,
+                        atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+        if kind == UICollectionElementKindSectionHeader {
+            return collectionView.dequeueReusableSupplementaryViewOfKind(kind,
+                                                                         withReuseIdentifier: "VideosHeaderView",
+                                                                         forIndexPath: indexPath)
+        }
+        fatalError("Invalid indexPath \(indexPath) in \(#function)")
+    }
+
+    func collectionView(collectionView: UICollectionView,
+                        shouldUpdateFocusInContext context: UICollectionViewFocusUpdateContext) -> Bool {
+        return true
+    }
+    
+}
